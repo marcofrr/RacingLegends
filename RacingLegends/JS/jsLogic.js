@@ -43,11 +43,11 @@ function mostraCategorias(categorias) {
         lblDesc.textContent = categoria.description;
         lblImg.src = catImg(categoria.id);
         div.id = categoria.id;
-        div.setAttribute("class", "teste");
+        div.className = "cat";
         divImg.className = "catImagem";
 
         divImg.appendChild(lblNome);
-        //div.appendChild(lblDesc);
+        divImg.appendChild(lblDesc);
         divImg.appendChild(lblImg);
         div.appendChild(divImg);
         catDiv.appendChild(div);
@@ -173,7 +173,7 @@ function catPiloto(id) {
 function muda() {
     //ecraCategorias();
     
-    document.getElementById("categorias").style.display = "block";
+    document.getElementById("categorias").style.display = "flex";
     document.getElementById("pilotos").style.display = "none";
     document.getElementById("detalhes").style.display = "none";
     document.getElementById("teste").innerHTML = " ";
@@ -182,13 +182,13 @@ function muda() {
 
 }
 
-$(document).on("click onclick", '.teste > div > h1', function () {
+$(document).on("click onclick", '#categorias > div', function () {
     document.getElementById("categorias").style.display = "none";
     document.getElementById("pilotos").style.display = "block";
     //console.log("teste");
 
-    ecraPilotosCat($(this).parent().parent().attr('id'));
-    console.log($(this).parent().attr('id'));
+    ecraPilotosCat($(this).attr('id'));
+    console.log($(this).attr('id'));
 });
 
 $(document).on("click onclick", '.piloto', function () {
