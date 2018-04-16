@@ -5,6 +5,46 @@
     display: flex;
     flex-wrap: wrap;
 }
+#barraTopo {
+    border-bottom:3px solid grey;
+}
+#pilotos {
+    display: none;
+}
+#detalhes{
+    display:none;
+}
+p{
+    font-size:12px;
+
+}
+#pilotos{
+    justify-content:center;
+}
+.piloto {
+    display: flex;
+    flex-wrap: wrap;
+    padding:5px;
+}
+    .piloto img {
+
+        height: 280px;
+        width: 200px;
+        object-fit: cover;
+    }
+    .piloto p {
+        color: white;
+        display: flex;
+        font: bold 24px/45px Helvetica, Sans-Serif;
+        letter-spacing: -1px;
+        background: rgb(0, 0, 0); /* fallback color */
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0px;
+        position: absolute;
+        width: 100%;
+        margin: 0;
+        text-align: left;
+    }
 .catImagem {
     
     background-size: cover;
@@ -14,26 +54,26 @@
     position: relative;
     width: 400px;
     height: 200px;
-    padding: 10px;
+    margin: 10px;
 
     height: 300px;
     width: 500px;
 }
     .catImagem img {
-        
+        object-fit: cover;
         height: 100%;
         width: 100%;
     }
     .catImagem h1 {
         color: white;
-        display : block;
+        display : flex;
         font: bold 24px/45px Helvetica, Sans-Serif;
         letter-spacing: -1px;
         background: rgb(0, 0, 0); /* fallback color */
         background: rgba(0, 0, 0, 0.5);
         padding: 0px;
         position: absolute;
-        width: 96.15%;
+        width:100%;
         margin: 0;
         text-align: left;
     }
@@ -42,17 +82,19 @@
     display:none;
 }
 
-.catImagem:hover p {
-    display:initial;
-    color: white;
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;
-    background: rgb(0, 0, 0); /* fallback color */
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0px;
-    position: absolute;
-    width: 96.15%;
-    bottom: 0;
-    margin: 0;
-    text-align: left;
-}
+    .catImagem:hover p {
+        color: white;
+        display: flex;
+        font: bold 24px/45px Helvetica, Sans-Serif;
+        letter-spacing: -1px;
+        background: rgb(0, 0, 0); /* fallback color */
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0px;
+        position: absolute;
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        bottom:0;
+
+
+    }

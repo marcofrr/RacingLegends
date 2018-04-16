@@ -68,9 +68,10 @@ function mostraPilotosCat(categoria) {
         lblNation.textContent = piloto.nationality;
         lblPiloto.src = pilotoImg(piloto.id);
         div.setAttribute("id", piloto.id);
+        div.className = "piloto";
 
         div.appendChild(lblNome);
-        div.appendChild(lblNation);
+        //div.appendChild(lblNation);
         div.appendChild(lblPiloto);
         pilotoDiv.appendChild(div);
     });
@@ -164,7 +165,6 @@ function ecraPilotosCat(catId) {
 //recebe o id de uma categoria, troca do div das categorias para o do pilotos e mostra os pilotos dessa categoria
 function catPiloto(id) {
     document.getElementById("categorias").style.display = "none";
-    document.getElementById("pilotos").style.display = "block";
     
     ecraPilotosCat(catPilotos(id));
 
@@ -176,30 +176,37 @@ function muda() {
     document.getElementById("categorias").style.display = "flex";
     document.getElementById("pilotos").style.display = "none";
     document.getElementById("detalhes").style.display = "none";
+    document.getElementById("button").style.display = "none";
     document.getElementById("teste").innerHTML = " ";
+
     //$('element:visible').style.display = "none";
 
 
 }
-
+//carrega-se numa img da categoria evai para os pilotos dessa categoria
 $(document).on("click onclick", '#categorias > div', function () {
     document.getElementById("categorias").style.display = "none";
-    document.getElementById("pilotos").style.display = "block";
-    //console.log("teste");
+    document.getElementById("pilotos").innerHTML = "";
+    document.getElementById("pilotos").style.display = "flex";
+    document.getElementById("button").style.display = "block";
+    // document.getElementById("pilotos").style.display = "flex";
+    console.log("teste");
 
     ecraPilotosCat($(this).attr('id'));
     console.log($(this).attr('id'));
 });
 
-$(document).on("click onclick", '.piloto', function () {
+$(document).on("click onclick", '#pilotos >div', function () {
     //document.getElementById("categorias").style.display = "none";
-    //document.getElementById("pilotos").style.display = "block";
+
     //console.log("teste");
 
     //ecraPilotosCat($(this).parent().attr('id'));
     document.getElementById("pilotos").style.display = "none";
     //$('element:visible').style.display = "none";
     document.getElementById("detalhes").innerHTML = "";
-    ecraDetalhes($(this).parent().attr('id'));
-    console.log($(this).parent().attr('id'));
+    document.getElementById("pilotos").style.display = "flex";
+    console.log($(this).attr('id'));
+    ecraDetalhes($(this).attr('id'));
+
 });
